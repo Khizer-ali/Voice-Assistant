@@ -70,20 +70,6 @@ if __name__ == "__main__":
             print(results)
             speak(results)
 
-        elif 'news' in query:
-            speak("News Headlines")
-            query = query.replace("news", " ")
-            url = "https://newsapi.org/v2/top-headlines?country=de&apiKey=6fa1d67cb30a4c47ba4e83be44a95915"
-            news = requests.get(url).text
-            news = json.loads(news)
-            articles = news['articles']
-            for article in articles:
-                print(article['title'])
-                speak(article['title'])
-                print(article['description'])
-                speak(article['description'])
-                speak("Moving on to the next news")
-
         elif 'open google' in query:
             webbrowser.get('chrome').open("https://www.google.com/")
 
